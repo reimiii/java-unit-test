@@ -1,6 +1,7 @@
 package franxx.code.test;
 
 import franxx.code.test.generator.SimpleDisplayNameGenerator;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.Test;
@@ -33,5 +34,11 @@ public class CalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> {
             calculator.divide(10, 0);
         });
+    }
+
+    @Test
+    @Disabled
+    public void testComingSoon() {
+
     }
 }
