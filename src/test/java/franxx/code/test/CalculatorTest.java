@@ -5,6 +5,7 @@ import org.junit.jupiter.api.*;
 import org.opentest4j.TestAbortedException;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 @DisplayNameGeneration(SimpleDisplayNameGenerator.class)
 // @DisplayName("Test Untuk Calculator Class")
@@ -66,6 +67,13 @@ public class CalculatorTest {
         if (!"DEV".equals(profile)) {
             throw new TestAbortedException("Test di batalkan");
         }
+
+        // unit test untuk dev
+    }
+
+    @Test
+    public void testAssumption() {
+        assumeTrue("DEV".equals(System.getenv("PROFILE")));
 
         // unit test untuk dev
     }
