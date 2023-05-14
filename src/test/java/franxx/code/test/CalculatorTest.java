@@ -1,10 +1,7 @@
 package franxx.code.test;
 
 import franxx.code.test.generator.SimpleDisplayNameGenerator;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.DisplayNameGeneration;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,6 +9,26 @@ import static org.junit.jupiter.api.Assertions.*;
 // @DisplayName("Test Untuk Calculator Class")
 public class CalculatorTest {
     private Calculator calculator = new Calculator();
+
+    @BeforeAll
+    public static void beforeAll() {
+        System.out.println("Before All");
+    }
+
+    @AfterAll
+    public static void afterAll() {
+        System.out.println("After All");
+    }
+
+    @BeforeEach
+    public void setUp() {
+        System.out.println("Before each");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        System.out.println("After each");
+    }
 
     @Test
     // @DisplayName("Test skenario sukses untuk method add(int, int)")
