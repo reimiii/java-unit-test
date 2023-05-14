@@ -2,6 +2,7 @@ package franxx.code.test;
 
 import franxx.code.test.generator.SimpleDisplayNameGenerator;
 import org.junit.jupiter.api.*;
+import org.opentest4j.TestAbortedException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -57,5 +58,15 @@ public class CalculatorTest {
     @Disabled
     public void testComingSoon() {
 
+    }
+
+    @Test
+    public void testAborted() {
+        var profile = System.getenv("PROFILE");
+        if (!"DEV".equals(profile)) {
+            throw new TestAbortedException("Test di batalkan");
+        }
+
+        // unit test untuk dev
     }
 }
